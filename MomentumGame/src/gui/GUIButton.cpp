@@ -86,6 +86,10 @@ bool GUIButton::mouseUp() {
 	return true;
 }
 
+void GUIButton::keyPress(char c) {
+	// do nothing
+}
+
 void GUIButton::setTransparency(int a) {
 	if (a > 255)
 		currAlpha_ = 255;

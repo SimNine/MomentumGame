@@ -7,6 +7,11 @@
 class TimedEvent;
 class GUIContainer;
 class GUITextbox;
+class TitleOverlay;
+class MainOverlay;
+class NotifyOverlay;
+class GameOverlay;
+class BackgroundOverlay;
 
 /*
 GLOBAL VARIABLES
@@ -34,8 +39,15 @@ extern bool _quit;
 // debug level flag
 extern DEBUG _debug;
 
-// overlay stack
+// overlays
 extern LinkedList<GUIContainer*>* _overlayStack;
+extern TitleOverlay* _titleOverlay;
+extern MainOverlay* _mainOverlay;
+extern GameOverlay* _gameOverlay;
+extern BackgroundOverlay* _backgroundOverlay;
+
+extern GUIContainer* _fadeOverlay;
+extern NotifyOverlay* _notifyOverlay;
 
 // GUIContainer currently held by the mouse
 extern GUIContainer* _heldContainer;

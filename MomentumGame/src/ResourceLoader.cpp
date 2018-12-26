@@ -46,12 +46,16 @@ SDL_Texture* loadString(std::string str, FONT ft, int fsize, SDL_Color col) {
 	// load the font in the correct size
 	TTF_Font* f;
 	if (ft == FONT_NORMAL) 
-		f = TTF_OpenFont("resources/AGENCYR.ttf", fsize);
+		//f = TTF_OpenFont("resources/fonts/PoiretOne-Regular.ttf", fsize);
+		f = TTF_OpenFont("resources/fonts/Bauhaus_.ttf", fsize);
+		//f = TTF_OpenFont("resources/fonts/Prisma.ttf", fsize);
 	else if (ft == FONT_BOLD) 
-		f = TTF_OpenFont("resources/AGENCYB.ttf", fsize);
+		//f = TTF_OpenFont("resources/fonts/Prisma.ttf", fsize);
+		//f = TTF_OpenFont("resources/fonts/PoiretOne-Regular.ttf", fsize);
+		f = TTF_OpenFont("resources/fonts/Bauhaus_.ttf", fsize);
 	else 
-		f = TTF_OpenFont("resources/AGENCYR.ttf", fsize);
-	if (!f) 
+		f = TTF_OpenFont("resources/fonts/Bauhaus_.ttf", fsize);
+	if (!f)
 		log("TTF_OpenFont: " + std::string(TTF_GetError()) + "\n");
 
 	// load the surface

@@ -23,12 +23,14 @@ public:
 
 	virtual ~GUIButton();
 
-	void draw();
+	// GUIObject overrides
+	void setTransparency(int);
 	bool mouseDown();
 	bool mouseUp();
+	void keyPress(char);
+	void draw();
 	void tick(int);
 	void resetBounds();
-	void setTransparency(int);
 protected:
 private:
 	SDL_Texture* bkgNormal_;

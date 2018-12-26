@@ -37,6 +37,10 @@ bool GUISlider::mouseUp() {
 	return true;
 }
 
+void GUISlider::keyPress(char c) {
+	// do nothing
+}
+
 void GUISlider::draw() {
 	SDL_SetRenderDrawColor(_renderer, 255, 255, 255, currAlpha_);
 	SDL_RenderDrawLine(_renderer,

@@ -62,6 +62,10 @@ bool GUIContainer::mouseUp() {
 	return ret;
 }
 
+void GUIContainer::keyPress(char c) {
+	// do nothing
+}
+
 void GUIContainer::setPressed(bool p) {
 	Iterator<GUIObject*> it = contents_->getIterator();
 	while (it.hasNext()) {

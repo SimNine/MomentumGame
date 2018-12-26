@@ -4,6 +4,8 @@
 #include "GUIContainer.h"
 #include "GUITextbox.h"
 
+#include "TitleOverlay.h"
+
 /*
 GLOBAL VARIABLES
 */
@@ -19,6 +21,13 @@ LinkedList<TimedEvent*>* _timedEvents = new LinkedList<TimedEvent*>();
 
 // designate the GUI_containers
 LinkedList<GUIContainer*>* _overlayStack = new LinkedList<GUIContainer*>();
+TitleOverlay* _titleOverlay = NULL;
+MainOverlay* _mainOverlay = NULL;
+GameOverlay* _gameOverlay = NULL;
+BackgroundOverlay* _backgroundOverlay = NULL;
+
+GUIContainer* _fadeOverlay = NULL;
+NotifyOverlay* _notifyOverlay = NULL;
 
 // mouse position
 Coord _mousePos = { 0, 0 };

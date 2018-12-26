@@ -17,12 +17,14 @@ public:
 	LinkedList<GUIObject*>* getContents();
 	void setPressed(bool);
 
-	void resetBounds();
-	void draw();
+	// GUIObject overrides
+	void setTransparency(int);
 	bool mouseDown();
 	bool mouseUp();
+	void keyPress(char);
+	void draw();
 	void tick(int);
-	void setTransparency(int);
+	void resetBounds();
 
 	void incDisplacement(Coord);
 

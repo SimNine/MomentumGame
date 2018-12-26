@@ -53,6 +53,10 @@ bool GUITexture::mouseUp() {
 	return true;
 }
 
+void GUITexture::keyPress(char c) {
+	// do nothing
+}
+
 void GUITexture::draw() {
 	SDL_SetTextureAlphaMod(texture_, currAlpha_);
 	SDL_RenderCopy(_renderer, texture_, NULL, &bounds_);

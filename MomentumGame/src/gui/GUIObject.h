@@ -33,6 +33,7 @@ public:
 	virtual void setTransparency(int) = 0;
 	virtual bool mouseDown() = 0;
 	virtual bool mouseUp() = 0;
+	virtual void keyPress(char c) = 0;
 	virtual void draw() = 0;
 	virtual void tick(int millisec) = 0;
 	virtual void resetBounds() = 0;

@@ -25,6 +25,42 @@
     <Filter Include="Header Files\gui\effects">
       <UniqueIdentifier>{4277fa9d-6445-4041-b3b3-17bb32cfac33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\overlays">
+      <UniqueIdentifier>{7808fdf4-0ea2-4a1c-9e1e-a5938d5ac613}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\overlays">
+      <UniqueIdentifier>{f477a7f8-e838-4e8b-ab69-ec7fdc1b89ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\overlays\main">
+      <UniqueIdentifier>{0d8e31d5-53aa-479c-a869-deb451760178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\overlays\title">
+      <UniqueIdentifier>{719a0e93-997b-47e5-838e-bf155df0d2bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\overlays\game">
+      <UniqueIdentifier>{3055890d-c831-4a51-ac1f-0ba8df23fba2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\overlays\notify">
+      <UniqueIdentifier>{595effc7-98c4-46cf-9d77-f0f6586337ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\overlays\main">
+      <UniqueIdentifier>{78855433-f0d6-4281-b994-0376f4abfbc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\overlays\game">
+      <UniqueIdentifier>{c80b3e2a-6f90-4453-b27e-fbc172f819d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\overlays\notify">
+      <UniqueIdentifier>{148f011b-5e76-4fd8-a9c4-05b3a6c2512f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\overlays\title">
+      <UniqueIdentifier>{2aab3638-215a-4861-b96a-e1dd44e2a063}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\overlays\background">
+      <UniqueIdentifier>{81da5191-af2a-457e-add5-aa0a87a64e29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\overlays\background">
+      <UniqueIdentifier>{d8ccdd02-d409-4cda-832d-b37888629f79}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gui\GUIButton.h">
@@ -90,6 +126,42 @@
     <ClInclude Include="src\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\overlays\main\AchievementButton.h">
+      <Filter>Header Files\overlays\main</Filter>
+    </ClInclude>
+    <ClInclude Include="src\overlays\main\MainOverlay.h">
+      <Filter>Header Files\overlays\main</Filter>
+    </ClInclude>
+    <ClInclude Include="src\overlays\main\PromptBox.h">
+      <Filter>Header Files\overlays\main</Filter>
+    </ClInclude>
+    <ClInclude Include="src\overlays\game\GameOverlay.h">
+      <Filter>Header Files\overlays\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\overlays\TimedEvent.h">
+      <Filter>Header Files\overlays</Filter>
+    </ClInclude>
+    <ClInclude Include="src\overlays\title\TitleOverlay.h">
+      <Filter>Header Files\overlays\title</Filter>
+    </ClInclude>
+    <ClInclude Include="src\overlays\notify\NotifyOverlay.h">
+      <Filter>Header Files\overlays\notify</Filter>
+    </ClInclude>
+    <ClInclude Include="src\overlays\notify\PopupAchievement.h">
+      <Filter>Header Files\overlays\notify</Filter>
+    </ClInclude>
+    <ClInclude Include="src\overlays\notify\PopupNotification.h">
+      <Filter>Header Files\overlays\notify</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\overlays\background\BackgroundOverlay.h">
+      <Filter>Header Files\overlays\background</Filter>
+    </ClInclude>
+    <ClInclude Include="src\overlays\background\GlowSpeck.h">
+      <Filter>Header Files\overlays\background</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\gui\GUIButton.cpp">
@@ -137,5 +209,46 @@
     <ClCompile Include="src\Global.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\overlays\TimedEvent.cpp">
+      <Filter>Source Files\overlays</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlays\main\AchievementButton.cpp">
+      <Filter>Source Files\overlays\main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlays\main\MainOverlay.cpp">
+      <Filter>Source Files\overlays\main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlays\main\PromptBox.cpp">
+      <Filter>Source Files\overlays\main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlays\game\GameOverlay.cpp">
+      <Filter>Source Files\overlays\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlays\notify\NotifyOverlay.cpp">
+      <Filter>Source Files\overlays\notify</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlays\notify\PopupAchievement.cpp">
+      <Filter>Source Files\overlays\notify</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlays\notify\PopupNotification.cpp">
+      <Filter>Source Files\overlays\notify</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlays\title\TitleOverlay.cpp">
+      <Filter>Source Files\overlays\title</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resources.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlays\background\BackgroundOverlay.cpp">
+      <Filter>Source Files\overlays\background</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlays\background\GlowSpeck.cpp">
+      <Filter>Source Files\overlays\background</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

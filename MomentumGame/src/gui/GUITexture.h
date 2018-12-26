@@ -22,10 +22,12 @@ public:
 
 	SDL_Texture* swapTexture(SDL_Texture*);
 
-	void draw();
+	// GUIObject overrides
+	void setTransparency(int opacity);
 	bool mouseDown();
 	bool mouseUp();
-	void setTransparency(int opacity);
+	void keyPress(char);
+	void draw();
 	void tick(int ms);
 	void resetBounds();
 protected:

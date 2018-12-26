@@ -72,19 +72,6 @@ void GUITextbox::clearContents() {
 	contentText_ = "";
 }
 
-void GUITextbox::addChar(char c) {
-	if (_activeTextbox != this)
-		return;
-
-	if (c == 127) { // backspace
-		if (contentText_.length() > 0)
-			contentText_.pop_back();
-	} else if (contentText_.length() < maxChars_)
-		contentText_ += c;
-
-	cursorFade_ = 0;
-}
-
 bool GUITextbox::mouseDown() {
 	_activeTextbox = this;
 	return true;
@@ -92,6 +79,20 @@ bool GUITextbox::mouseDown() {
 
 bool GUITextbox::mouseUp() {
 	return true;
+}
+
+void GUITextbox::keyPress(char c) {
+	if (_activeTextbox != this)
+		return;
+
+	if (c == 127) { // backspace
+		if (contentText_.length() > 0)
+			contentText_.pop_back();
+	}
+	else if (contentText_.length() < maxChars_)
+		contentText_ += c;
+
+	cursorFade_ = 0;
 }
 
 void GUITextbox::tick(int ms) {
