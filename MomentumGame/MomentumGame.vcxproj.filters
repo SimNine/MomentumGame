@@ -13,14 +13,128 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\gui">
+      <UniqueIdentifier>{053b33a6-7d88-425c-9699-5732fd309725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui">
+      <UniqueIdentifier>{3dd9ede4-b33d-43c6-ab35-231241759c53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\effects">
+      <UniqueIdentifier>{5b157315-3983-4916-886b-21f6348657a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\effects">
+      <UniqueIdentifier>{4277fa9d-6445-4041-b3b3-17bb32cfac33}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Standard.h">
+    <ClInclude Include="src\gui\GUIButton.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\GUIButtonParamaterized.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\GUIContainer.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\GUIObject.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\GUISlider.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\GUITextbox.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\GUITexture.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\effects\GUIEffect.h">
+      <Filter>Header Files\gui\effects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\effects\GUIEffectFade.h">
+      <Filter>Header Files\gui\effects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\effects\GUIEffectTranslate.h">
+      <Filter>Header Files\gui\effects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Coord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Standard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ResourceLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Iterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MiscUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="src\gui\GUIButton.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\GUIContainer.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\GUIObject.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\GUISlider.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\GUITextbox.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\GUITexture.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\effects\GUIEffect.cpp">
+      <Filter>Source Files\gui\effects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\effects\GUIEffectFade.cpp">
+      <Filter>Source Files\gui\effects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\effects\GUIEffectTranslate.cpp">
+      <Filter>Source Files\gui\effects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ResourceLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MiscUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Global.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

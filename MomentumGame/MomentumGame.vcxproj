@@ -72,8 +72,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_mixer-2.0.2-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_ttf-2.0.14-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_image-2.0.2-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2-2.0.7-VC++\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\gui\effects;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\gui;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_mixer-2.0.2-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_ttf-2.0.14-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_image-2.0.2-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2-2.0.7-VC++\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_ttf-2.0.14-VC++\lib\x86;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_mixer-2.0.2-VC++\lib\x86;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_image-2.0.2-VC++\lib\x86;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2-2.0.7-VC++\lib\x86;$(LibraryPath)</LibraryPath>
+    <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -99,6 +100,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -153,10 +155,44 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Standard.h" />
+    <ClInclude Include="src\Coord.h" />
+    <ClInclude Include="src\Enums.h" />
+    <ClInclude Include="src\Global.h" />
+    <ClInclude Include="src\gui\effects\GUIEffect.h" />
+    <ClInclude Include="src\gui\effects\GUIEffectFade.h" />
+    <ClInclude Include="src\gui\effects\GUIEffectTranslate.h" />
+    <ClInclude Include="src\gui\GUIButton.h" />
+    <ClInclude Include="src\gui\GUIButtonParamaterized.h" />
+    <ClInclude Include="src\gui\GUIContainer.h" />
+    <ClInclude Include="src\gui\GUIObject.h" />
+    <ClInclude Include="src\gui\GUISlider.h" />
+    <ClInclude Include="src\gui\GUITextbox.h" />
+    <ClInclude Include="src\gui\GUITexture.h" />
+    <ClInclude Include="src\Iterator.h" />
+    <ClInclude Include="src\LinkedList.h" />
+    <ClInclude Include="src\ListNode.h" />
+    <ClInclude Include="src\Logger.h" />
+    <ClInclude Include="src\MiscUtil.h" />
+    <ClInclude Include="src\ResourceLoader.h" />
+    <ClInclude Include="src\Standard.h" />
+    <ClInclude Include="src\Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="src\Global.cpp" />
+    <ClCompile Include="src\gui\effects\GUIEffect.cpp" />
+    <ClCompile Include="src\gui\effects\GUIEffectFade.cpp" />
+    <ClCompile Include="src\gui\effects\GUIEffectTranslate.cpp" />
+    <ClCompile Include="src\gui\GUIButton.cpp" />
+    <ClCompile Include="src\gui\GUIContainer.cpp" />
+    <ClCompile Include="src\gui\GUIObject.cpp" />
+    <ClCompile Include="src\gui\GUISlider.cpp" />
+    <ClCompile Include="src\gui\GUITextbox.cpp" />
+    <ClCompile Include="src\gui\GUITexture.cpp" />
+    <ClCompile Include="src\Logger.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\MiscUtil.cpp" />
+    <ClCompile Include="src\ResourceLoader.cpp" />
+    <ClCompile Include="src\Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
