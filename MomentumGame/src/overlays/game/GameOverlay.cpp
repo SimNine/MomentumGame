@@ -9,6 +9,8 @@
 #include "MiscUtil.h"
 #include "GUIEffectFade.h"
 #include "GUIEffectTranslate.h"
+#include "Game.h"
+#include "Player.h"
 
 GameOverlay::GameOverlay()
 	: GUIContainer(NULL, ANCHOR_NORTHWEST, { 0, 0 }, { _screenWidth, _screenHeight }, _color_black) {
@@ -75,8 +77,115 @@ bool GameOverlay::mouseUp() {
 }
 
 void GameOverlay::draw() {
-	drawBkg();
-	GUIContainer::drawContents();
+	SDL_Rect viewportRect;
+
+	// get the players
+	LinkedList<Player*>* players = _game->getPlayers();
+
+	if (players->getLength() == 1) {
+		viewportRect.x = 0;
+		viewportRect.y = 0;
+		viewportRect.w = _screenWidth;
+		viewportRect.h = _screenHeight;
+		drawViewport(players->getObjectAt(0), viewportRect);
+	}
+	else if (players->getLength() == 2) {
+		viewportRect.x = 0;
+		viewportRect.y = 0;
+		viewportRect.w = _screenWidth / 2;
+		viewportRect.h = _screenHeight;
+		drawViewport(players->getObjectAt(0), viewportRect);
+
+		viewportRect.x = _screenWidth / 2;
+		viewportRect.y = 0;
+		viewportRect.w = _screenWidth / 2;
+		viewportRect.h = _screenHeight;
+		drawViewport(players->getObjectAt(1), viewportRect);
+
+		SDL_SetRenderDrawColor(_renderer, 255, 255, 255, 255);
+		const int barWidth = 3;
+		SDL_Rect dividerBar;
+		dividerBar.x = (_screenWidth / 2) - barWidth;
+		dividerBar.y = 0;
+		dividerBar.w = barWidth * 2;
+		dividerBar.h = _screenHeight;
+		SDL_RenderFillRect(_renderer, &dividerBar);
+	}
+	else if (players->getLength() == 3) {
+		viewportRect.x = 0;
+		viewportRect.y = 0;
+		viewportRect.w = _screenWidth / 2;
+		viewportRect.h = _screenHeight / 2;
+		drawViewport(players->getObjectAt(0), viewportRect);
+
+		viewportRect.x = 0;
+		viewportRect.y = _screenHeight / 2;
+		viewportRect.w = _screenWidth / 2;
+		viewportRect.h = _screenHeight / 2;
+		drawViewport(players->getObjectAt(1), viewportRect);
+
+		viewportRect.x = _screenWidth / 2;
+		viewportRect.y = 0;
+		viewportRect.w = _screenWidth / 2;
+		viewportRect.h = _screenHeight;
+		drawViewport(players->getObjectAt(2), viewportRect);
+
+		SDL_SetRenderDrawColor(_renderer, 255, 255, 255, 255);
+		const int barWidth = 3;
+		SDL_Rect dividerBar;
+		dividerBar.x = (_screenWidth / 2) - barWidth;
+		dividerBar.y = 0;
+		dividerBar.w = barWidth * 2;
+		dividerBar.h = _screenHeight;
+		SDL_RenderFillRect(_renderer, &dividerBar);
+		dividerBar.x = 0;
+		dividerBar.y = (_screenHeight / 2) - barWidth;
+		dividerBar.w = _screenWidth / 2;
+		dividerBar.h = barWidth * 2;
+		SDL_RenderFillRect(_renderer, &dividerBar);
+	}
+	else if (players->getLength()) {
+		viewportRect.x = 0;
+		viewportRect.y = 0;
+		viewportRect.w = _screenWidth / 2;
+		viewportRect.h = _screenHeight / 2;
+		drawViewport(players->getObjectAt(0), viewportRect);
+
+		viewportRect.x = _screenWidth / 2;
+		viewportRect.y = 0;
+		viewportRect.w = _screenWidth / 2;
+		viewportRect.h = _screenHeight / 2;
+		drawViewport(players->getObjectAt(1), viewportRect);
+
+		viewportRect.x = 0;
+		viewportRect.y = _screenHeight / 2;
+		viewportRect.w = _screenWidth / 2;
+		viewportRect.h = _screenHeight / 2;
+		drawViewport(players->getObjectAt(2), viewportRect);
+
+		viewportRect.x = _screenWidth / 2;
+		viewportRect.y = _screenHeight / 2;
+		viewportRect.w = _screenWidth / 2;
+		viewportRect.h = _screenHeight / 2;
+		drawViewport(players->getObjectAt(3), viewportRect);
+
+		SDL_SetRenderDrawColor(_renderer, 255, 255, 255, 255);
+		const int barWidth = 3;
+		SDL_Rect dividerBar;
+		dividerBar.x = (_screenWidth / 2) - barWidth;
+		dividerBar.y = 0;
+		dividerBar.w = barWidth * 2;
+		dividerBar.h = _screenHeight;
+		SDL_RenderFillRect(_renderer, &dividerBar);
+		dividerBar.x = 0;
+		dividerBar.y = (_screenHeight / 2) - barWidth;
+		dividerBar.w = _screenWidth;
+		dividerBar.h = barWidth * 2;
+		SDL_RenderFillRect(_renderer, &dividerBar);
+	}
+	else {
+		log("why are there more than four players?\n");
+	}
 }
 
 void GameOverlay::keyPress(char c) {
@@ -117,28 +226,93 @@ void GameOverlay::tick(int ms) {
 	*/
 
 	// scan for keys currently pressed
-	/*
 	const Uint8* currentKeyStates = SDL_GetKeyboardState(NULL);
+	double shiftSpeed_ = 0.5;
 	int shiftAmt = (int)(shiftSpeed_* (double)ms);
+	Coord shiftAmount = Coord{ 0, 0 };
 	if (currentKeyStates[SDL_SCANCODE_UP])
-		shiftBkg({ 0, -shiftAmt });
+		shiftAmount = shiftAmount + Coord{ 0, -shiftAmt };
 	else if (currentKeyStates[SDL_SCANCODE_DOWN])
-		shiftBkg({ 0, shiftAmt });
+		shiftAmount = shiftAmount + Coord{ 0, shiftAmt };
 
 	if (currentKeyStates[SDL_SCANCODE_LEFT])
-		shiftBkg({ -shiftAmt, 0 });
+		shiftAmount = shiftAmount + Coord{ -shiftAmt, 0 };
 	else if (currentKeyStates[SDL_SCANCODE_RIGHT])
-		shiftBkg({ shiftAmt, 0 });
+		shiftAmount = shiftAmount + Coord{ shiftAmt, 0 };
 
 	// if the mouse is at an edge, try to shift the background
 	if (_mousePos.x < 20)
-		shiftBkg({ -shiftAmt, 0 });
+		shiftAmount = shiftAmount + Coord{ -shiftAmt, 0 };
 	else if (_mousePos.x > _screenWidth - 20)
-		shiftBkg({ shiftAmt, 0 });
+		shiftAmount = shiftAmount + Coord{ shiftAmt, 0 };
 
 	if (_mousePos.y < 20)
-		shiftBkg({ 0, -shiftAmt });
+		shiftAmount = shiftAmount + Coord{ 0, -shiftAmt };
 	else if (_mousePos.y > _screenHeight - 20)
-		shiftBkg({ 0, shiftAmt });
-		*/
+		shiftAmount = shiftAmount + Coord{ 0, shiftAmt };
+
+	_game->displacePlayer(_game->getPlayers()->getObjectAt(0), shiftAmount);
+}
+
+void GameOverlay::drawPlatforms(Coord cameraPos) {
+	SDL_SetRenderDrawColor(_renderer, 255, 255, 255, 255);
+	Iterator<SDL_Rect*> rectIt = _game->getPlatforms()->getIterator();
+	while (rectIt.hasNext()) {
+		SDL_Rect* curr = rectIt.next();
+		SDL_Rect newRect = *curr;
+		newRect.x -= cameraPos.x;
+		newRect.y -= cameraPos.y;
+		SDL_RenderFillRect(_renderer, &newRect);
+	}
+}
+
+void GameOverlay::drawViewport(Player* p, SDL_Rect viewport) {
+	// calculate this player's camera position
+	Coord cameraPos;
+	cameraPos = p->getPos() - Coord{ viewport.w / 2, viewport.h / 2 };
+
+	// set the viewport
+	SDL_RenderSetViewport(_renderer, &viewport);
+
+	// draw background and platforms
+	drawBkg();
+	drawPlatforms(cameraPos);
+
+	// draw all players
+	Iterator<Player*> playerIt = _game->getPlayers()->getIterator();
+	while (playerIt.hasNext()) {
+		drawPlayer(cameraPos, playerIt.next());
+	}
+
+	// draw the level's bounding box
+	SDL_SetRenderDrawColor(_renderer, 255, 0, 0, 255);
+	SDL_Rect levelBounds = _game->getLevelBounds();
+	levelBounds.w = levelBounds.w - levelBounds.x;
+	levelBounds.h = levelBounds.h - levelBounds.y;
+	levelBounds.x -= cameraPos.x;
+	levelBounds.y -= cameraPos.y;
+	SDL_RenderDrawRect(_renderer, &levelBounds);
+
+	// draw player position if debug string is enabled
+	if (_debug >= DEBUG_NORMAL) {
+		SDL_Texture* coordTex = loadString("(" + to_string(p->getPos().x) + "," + to_string(p->getPos().y) + ")", FONT_NORMAL, 10, _color_white);
+		int w, h;
+		SDL_QueryTexture(coordTex, NULL, NULL, &w, &h);
+		SDL_Rect coordBounds{ 0, 0, w, h };
+		SDL_RenderCopy(_renderer, coordTex, NULL, &coordBounds);
+	}
+
+	// reset the viewport
+	SDL_Rect defaultViewport = SDL_Rect{ 0, 0, _screenWidth, _screenHeight };
+	SDL_RenderSetViewport(_renderer, &defaultViewport);
+}
+
+void GameOverlay::drawPlayer(Coord cameraPos, Player* p) {
+	SDL_Rect playerRect;
+	playerRect.x = p->getPos().x - cameraPos.x;
+	playerRect.y = p->getPos().y - cameraPos.y;
+	playerRect.w = p->getDims().x;
+	playerRect.h = p->getDims().y;
+	SDL_SetRenderDrawColor(_renderer, 255, 255, 0, 255);
+	SDL_RenderFillRect(_renderer, &playerRect);
 }

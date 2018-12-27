@@ -51,3 +51,6 @@ GUITextbox* _activeTextbox = NULL;
 // initial (and minimum) screen dimension constants
 int _screenWidth = 800;
 int _screenHeight = 600;
+
+// game singleton
+Game* _game = NULL;

@@ -61,6 +61,12 @@
     <Filter Include="Header Files\overlays\background">
       <UniqueIdentifier>{d8ccdd02-d409-4cda-832d-b37888629f79}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\game">
+      <UniqueIdentifier>{d1104b81-302c-4402-b87b-fcb4b43f797b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game">
+      <UniqueIdentifier>{d2e8a3ff-febf-43fb-95eb-cf11d8f98599}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gui\GUIButton.h">
@@ -162,6 +168,12 @@
     <ClInclude Include="src\overlays\background\GlowSpeck.h">
       <Filter>Header Files\overlays\background</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\Game.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Player.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\gui\GUIButton.cpp">
@@ -244,6 +256,12 @@
     </ClCompile>
     <ClCompile Include="src\overlays\background\GlowSpeck.cpp">
       <Filter>Source Files\overlays\background</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Game.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Player.cpp">
+      <Filter>Source Files\game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

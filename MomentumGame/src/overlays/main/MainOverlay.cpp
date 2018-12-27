@@ -13,6 +13,7 @@
 #include "GUIEffectTranslate.h"
 #include "TimedEvent.h"
 #include "BackgroundOverlay.h"
+#include "GameOverlay.h"
 
 MainOverlay::MainOverlay()
 	: GUIContainer(NULL, ANCHOR_NORTHWEST, { 0, 0 }, { _screenWidth, _screenHeight }, _color_clear) {
@@ -89,6 +90,17 @@ MainOverlay::MainOverlay()
 		Mix_PlayChannel(-1, _sound_move_player, 0);
 	});
 	mainContainer_->addObject(button_options);
+	GUIButton* button_game = new GUIButton(mainContainer_, ANCHOR_SOUTHWEST, { 20, -(41 + 20)*ln++ - 20 }, "GAME", 50,
+		[]() {
+		_fadeOverlay->addEffect(new GUIEffectFade(0, 1000, 0, 255));
+		_timedEvents->addLast(new TimedEvent(1100,
+			[]() {
+			_overlayStack->removeAll();
+			_overlayStack->push(_gameOverlay);
+		}));
+		_fadeOverlay->addEffect(new GUIEffectFade(1200, 1000, 255, 0));
+	});
+	mainContainer_->addObject(button_game);
 
 	/*
 	CREDITS CONTAINER

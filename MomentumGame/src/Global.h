@@ -12,6 +12,7 @@ class MainOverlay;
 class NotifyOverlay;
 class GameOverlay;
 class BackgroundOverlay;
+class Game;
 
 /*
 GLOBAL VARIABLES
@@ -58,3 +59,6 @@ extern GUITextbox* _activeTextbox;
 // screen dimensions
 extern int _screenWidth;
 extern int _screenHeight;
+
+// game singleton
+extern Game* _game;
