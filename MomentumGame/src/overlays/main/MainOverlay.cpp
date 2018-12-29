@@ -14,6 +14,8 @@
 #include "TimedEvent.h"
 #include "BackgroundOverlay.h"
 #include "GameOverlay.h"
+#include "Client.h"
+#include "Message.h"
 
 MainOverlay::MainOverlay()
 	: GUIContainer(NULL, ANCHOR_NORTHWEST, { 0, 0 }, { _screenWidth, _screenHeight }, _color_clear) {
@@ -92,6 +94,12 @@ MainOverlay::MainOverlay()
 	mainContainer_->addObject(button_options);
 	GUIButton* button_game = new GUIButton(mainContainer_, ANCHOR_SOUTHWEST, { 20, -(41 + 20)*ln++ - 20 }, "GAME", 50,
 		[]() {
+		_client->connectToLocalServer();
+
+		Message m;
+		m.type = MSGTYPE::STARTGAME;
+		_client->sendToPipe(m);
+
 		_fadeOverlay->addEffect(new GUIEffectFade(0, 1000, 0, 255));
 		_timedEvents->addLast(new TimedEvent(1100,
 			[]() {

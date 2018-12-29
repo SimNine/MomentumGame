@@ -4,6 +4,9 @@
 
 #include "LinkedList.h"
 
+// DEFINE used to make server function correctly for local clients
+#define LOCALSERVER
+
 class TimedEvent;
 class GUIContainer;
 class GUITextbox;
@@ -12,7 +15,8 @@ class MainOverlay;
 class NotifyOverlay;
 class GameOverlay;
 class BackgroundOverlay;
-class Game;
+class Server;
+class Client;
 
 /*
 GLOBAL VARIABLES
@@ -60,5 +64,8 @@ extern GUITextbox* _activeTextbox;
 extern int _screenWidth;
 extern int _screenHeight;
 
-// game singleton
-extern Game* _game;
+// server singleton
+extern Server* _server;
+
+// client singleton
+extern Client* _client;

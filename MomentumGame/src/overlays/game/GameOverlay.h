@@ -10,7 +10,7 @@ class ProgramInventoryDisplay;
 class PlayerDisplayContainer;
 class ChatDisplay;
 class Animation;
-class Player;
+class PlayerMirror;
 
 class GameOverlay : public GUIContainer {
 public:
@@ -28,7 +28,7 @@ public:
 protected:
 private:
 
-	void drawViewport(Player* p, SDL_Rect viewport);
+	void drawViewport(PlayerMirror* p, SDL_Rect viewport);
 	void drawPlatforms(Coord cameraPos);
-	void drawPlayer(Coord cameraPos, Player* p);
+	void drawPlayer(Coord cameraPos, PlayerMirror* p);
 };

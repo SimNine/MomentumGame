@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\game;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\background;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\notify;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\main;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\game;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\title;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\gui\effects;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\gui;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_mixer-2.0.2-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_ttf-2.0.14-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_image-2.0.2-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2-2.0.7-VC++\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\background;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\notify;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\main;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\game;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\title;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\gui\effects;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\gui;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\client\game;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\client;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumShared\src\server;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumShared\src\game;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumShared\src\utils;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_mixer-2.0.2-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_ttf-2.0.14-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_image-2.0.2-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2-2.0.7-VC++\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_ttf-2.0.14-VC++\lib\x86;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_mixer-2.0.2-VC++\lib\x86;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_image-2.0.2-VC++\lib\x86;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2-2.0.7-VC++\lib\x86;$(LibraryPath)</LibraryPath>
     <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -81,7 +81,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\game;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\background;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\notify;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\main;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\game;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\title;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\gui\effects;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\gui;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_mixer-2.0.2-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_ttf-2.0.14-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_image-2.0.2-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2-2.0.7-VC++\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\background;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\notify;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\main;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\game;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays\title;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\overlays;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\gui\effects;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\gui;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\client\game;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src\client;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumGame\src;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumShared\src\server;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumShared\src\game;C:\Users\curff\Desktop\Workspaces\C &amp; C++\MomentumGame\MomentumShared\src\utils;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_mixer-2.0.2-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_ttf-2.0.14-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_image-2.0.2-VC++\include;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2-2.0.7-VC++\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_ttf-2.0.14-VC++\lib\x86;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_mixer-2.0.2-VC++\lib\x86;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2_image-2.0.2-VC++\lib\x86;C:\Users\curff\Desktop\Workspaces\C &amp; C++\[Libraries]\SDL2-2.0.7-VC++\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -156,13 +156,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Coord.h" />
-    <ClInclude Include="src\game\Game.h" />
-    <ClInclude Include="src\game\Player.h" />
+    <ClInclude Include="..\MomentumShared\src\game\Game.h" />
+    <ClInclude Include="..\MomentumShared\src\game\Player.h" />
+    <ClInclude Include="..\MomentumShared\src\server\CommandProcessor.h" />
+    <ClInclude Include="..\MomentumShared\src\server\GameConfig.h" />
+    <ClInclude Include="..\MomentumShared\src\server\Message.h" />
+    <ClInclude Include="..\MomentumShared\src\server\Pipe.h" />
+    <ClInclude Include="..\MomentumShared\src\server\Server.h" />
+    <ClInclude Include="..\MomentumShared\src\utils\Coord.h" />
+    <ClInclude Include="..\MomentumShared\src\utils\Enums.h" />
+    <ClInclude Include="..\MomentumShared\src\utils\Iterator.h" />
+    <ClInclude Include="..\MomentumShared\src\utils\LinkedList.h" />
+    <ClInclude Include="..\MomentumShared\src\utils\ListNode.h" />
+    <ClInclude Include="..\MomentumShared\src\utils\Logger.h" />
+    <ClInclude Include="..\MomentumShared\src\utils\MiscUtil.h" />
+    <ClInclude Include="..\MomentumShared\src\utils\Timer.h" />
+    <ClInclude Include="src\client\Client.h" />
+    <ClInclude Include="src\client\PipeMirror.h" />
+    <ClInclude Include="src\client\ServerMirror.h" />
+    <ClInclude Include="src\client\game\GameMirror.h" />
+    <ClInclude Include="src\client\game\PlayerMirror.h" />
     <ClInclude Include="src\overlays\background\BackgroundOverlay.h" />
     <ClInclude Include="src\overlays\background\GlowSpeck.h" />
     <ClInclude Include="src\Resources.h" />
-    <ClInclude Include="src\Enums.h" />
     <ClInclude Include="src\Global.h" />
     <ClInclude Include="src\gui\effects\GUIEffect.h" />
     <ClInclude Include="src\gui\effects\GUIEffectFade.h" />
@@ -174,11 +190,6 @@
     <ClInclude Include="src\gui\GUISlider.h" />
     <ClInclude Include="src\gui\GUITextbox.h" />
     <ClInclude Include="src\gui\GUITexture.h" />
-    <ClInclude Include="src\Iterator.h" />
-    <ClInclude Include="src\LinkedList.h" />
-    <ClInclude Include="src\ListNode.h" />
-    <ClInclude Include="src\Logger.h" />
-    <ClInclude Include="src\MiscUtil.h" />
     <ClInclude Include="src\overlays\game\GameOverlay.h" />
     <ClInclude Include="src\overlays\main\AchievementButton.h" />
     <ClInclude Include="src\overlays\main\MainOverlay.h" />
@@ -190,11 +201,23 @@
     <ClInclude Include="src\overlays\title\TitleOverlay.h" />
     <ClInclude Include="src\ResourceLoader.h" />
     <ClInclude Include="src\Standard.h" />
-    <ClInclude Include="src\Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\game\Game.cpp" />
-    <ClCompile Include="src\game\Player.cpp" />
+    <ClCompile Include="..\MomentumShared\src\game\Game.cpp" />
+    <ClCompile Include="..\MomentumShared\src\game\Player.cpp" />
+    <ClCompile Include="..\MomentumShared\src\server\CommandProcessor.cpp" />
+    <ClCompile Include="..\MomentumShared\src\server\GameConfig.cpp" />
+    <ClCompile Include="..\MomentumShared\src\server\Message.cpp" />
+    <ClCompile Include="..\MomentumShared\src\server\Pipe.cpp" />
+    <ClCompile Include="..\MomentumShared\src\server\Server.cpp" />
+    <ClCompile Include="..\MomentumShared\src\utils\Logger.cpp" />
+    <ClCompile Include="..\MomentumShared\src\utils\MiscUtil.cpp" />
+    <ClCompile Include="..\MomentumShared\src\utils\Timer.cpp" />
+    <ClCompile Include="src\client\Client.cpp" />
+    <ClCompile Include="src\client\PipeMirror.cpp" />
+    <ClCompile Include="src\client\ServerMirror.cpp" />
+    <ClCompile Include="src\client\game\GameMirror.cpp" />
+    <ClCompile Include="src\client\game\PlayerMirror.cpp" />
     <ClCompile Include="src\overlays\background\BackgroundOverlay.cpp" />
     <ClCompile Include="src\overlays\background\GlowSpeck.cpp" />
     <ClCompile Include="src\Resources.cpp" />
@@ -208,9 +231,7 @@
     <ClCompile Include="src\gui\GUISlider.cpp" />
     <ClCompile Include="src\gui\GUITextbox.cpp" />
     <ClCompile Include="src\gui\GUITexture.cpp" />
-    <ClCompile Include="src\Logger.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\MiscUtil.cpp" />
     <ClCompile Include="src\overlays\game\GameOverlay.cpp" />
     <ClCompile Include="src\overlays\main\AchievementButton.cpp" />
     <ClCompile Include="src\overlays\main\MainOverlay.cpp" />
@@ -221,7 +242,6 @@
     <ClCompile Include="src\overlays\TimedEvent.cpp" />
     <ClCompile Include="src\overlays\title\TitleOverlay.cpp" />
     <ClCompile Include="src\ResourceLoader.cpp" />
-    <ClCompile Include="src\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\icon.ico">

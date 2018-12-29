@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\shared">
+      <UniqueIdentifier>{1c7157b3-a1ac-4748-9d82-3930e93d70b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\shared\utils">
+      <UniqueIdentifier>{aacb8ad0-fb4e-4d1a-b638-9aed1f0f2eec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\shared\game">
+      <UniqueIdentifier>{c6dcd04a-9b42-404b-9e58-fa0accbeb758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared">
+      <UniqueIdentifier>{85ba145a-1f25-4d1a-bf6e-2f0da0e56084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared\game">
+      <UniqueIdentifier>{703aa344-916f-4572-8864-4bbfaa37c7bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared\utils">
+      <UniqueIdentifier>{a1bf8e34-5e7b-4f0f-b75e-d0a1d43bf1b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\shared\server">
+      <UniqueIdentifier>{50024a84-987e-4293-8792-79fb58d5e938}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared\server">
+      <UniqueIdentifier>{f82a5ae9-c7cc-46b2-80d5-a5dd4b7752f0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\MomentumShared\src\game\Game.h">
+      <Filter>Header Files\shared\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\game\Player.h">
+      <Filter>Header Files\shared\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\utils\Coord.h">
+      <Filter>Header Files\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\utils\Enums.h">
+      <Filter>Header Files\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\utils\Iterator.h">
+      <Filter>Header Files\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\utils\LinkedList.h">
+      <Filter>Header Files\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\utils\ListNode.h">
+      <Filter>Header Files\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\utils\Logger.h">
+      <Filter>Header Files\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\utils\MiscUtil.h">
+      <Filter>Header Files\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\utils\Timer.h">
+      <Filter>Header Files\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Standard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\server\CommandProcessor.h">
+      <Filter>Header Files\shared\server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\server\GameConfig.h">
+      <Filter>Header Files\shared\server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\server\Message.h">
+      <Filter>Header Files\shared\server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\server\Server.h">
+      <Filter>Header Files\shared\server</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MomentumShared\src\server\Pipe.h">
+      <Filter>Header Files\shared\server</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\MomentumShared\src\game\Game.cpp">
+      <Filter>Source Files\shared\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MomentumShared\src\game\Player.cpp">
+      <Filter>Source Files\shared\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MomentumShared\src\utils\Logger.cpp">
+      <Filter>Source Files\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MomentumShared\src\utils\MiscUtil.cpp">
+      <Filter>Source Files\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MomentumShared\src\utils\Timer.cpp">
+      <Filter>Source Files\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MomentumShared\src\server\CommandProcessor.cpp">
+      <Filter>Source Files\shared\server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MomentumShared\src\server\GameConfig.cpp">
+      <Filter>Source Files\shared\server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MomentumShared\src\server\Message.cpp">
+      <Filter>Source Files\shared\server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MomentumShared\src\server\Server.cpp">
+      <Filter>Source Files\shared\server</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MomentumShared\src\server\Pipe.cpp">
+      <Filter>Source Files\shared\server</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

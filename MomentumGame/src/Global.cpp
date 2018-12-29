@@ -52,5 +52,8 @@ GUITextbox* _activeTextbox = NULL;
 int _screenWidth = 800;
 int _screenHeight = 600;
 
-// game singleton
-Game* _game = NULL;
+// server singleton
+Server* _server = NULL;
+
+// client singleton
+Client* _client = NULL;

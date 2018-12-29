@@ -9,8 +9,11 @@
 #include "MiscUtil.h"
 #include "GUIEffectFade.h"
 #include "GUIEffectTranslate.h"
-#include "Game.h"
-#include "Player.h"
+#include "GameMirror.h"
+#include "PlayerMirror.h"
+#include "Client.h"
+#include "Message.h"
+#include "PipeMirror.h"
 
 GameOverlay::GameOverlay()
 	: GUIContainer(NULL, ANCHOR_NORTHWEST, { 0, 0 }, { _screenWidth, _screenHeight }, _color_black) {
@@ -80,7 +83,7 @@ void GameOverlay::draw() {
 	SDL_Rect viewportRect;
 
 	// get the players
-	LinkedList<Player*>* players = _game->getPlayers();
+	LinkedList<PlayerMirror*>* players = _client->getGame()->getPlayers();
 
 	if (players->getLength() == 1) {
 		viewportRect.x = 0;
@@ -184,7 +187,7 @@ void GameOverlay::draw() {
 		SDL_RenderFillRect(_renderer, &dividerBar);
 	}
 	else {
-		log("why are there more than four players?\n");
+		//log("why are there more than four players?\n");
 	}
 }
 
@@ -192,6 +195,13 @@ void GameOverlay::keyPress(char c) {
 	// show or hide pause menu
 	if (c == SDLK_ESCAPE) {
 		//_gameOverlay->showPauseMenu();
+	}
+
+	if (c == SDLK_SPACE) {
+		Message m;
+		m.type = MSGTYPE::INFO;
+		m.subType = MSGINFOTYPE::PLAYER_ADD;
+		_client->sendToPipe(m);
 	}
 
 	// handle chat display
@@ -241,6 +251,7 @@ void GameOverlay::tick(int ms) {
 		shiftAmount = shiftAmount + Coord{ shiftAmt, 0 };
 
 	// if the mouse is at an edge, try to shift the background
+	/*
 	if (_mousePos.x < 20)
 		shiftAmount = shiftAmount + Coord{ -shiftAmt, 0 };
 	else if (_mousePos.x > _screenWidth - 20)
@@ -250,13 +261,26 @@ void GameOverlay::tick(int ms) {
 		shiftAmount = shiftAmount + Coord{ 0, -shiftAmt };
 	else if (_mousePos.y > _screenHeight - 20)
 		shiftAmount = shiftAmount + Coord{ 0, shiftAmt };
+	*/
 
-	_game->displacePlayer(_game->getPlayers()->getObjectAt(0), shiftAmount);
+	// if there's no sum of movement, do nothing
+	if (shiftAmount == Coord{0, 0})
+		return;
+
+	// TODO: find a better way to determine which player's movement is being sent
+	if (_client->getMyClientMirror()->player_ != NULL) {
+		Message m;
+		m.type = MSGTYPE::INFO;
+		m.subType = MSGINFOTYPE::PLAYER_MOVE;
+		m.num = _client->getMyClientMirror()->player_->getPlayerID();
+		m.pos = shiftAmount;
+		_client->sendToPipe(m);
+	}
 }
 
 void GameOverlay::drawPlatforms(Coord cameraPos) {
 	SDL_SetRenderDrawColor(_renderer, 255, 255, 255, 255);
-	Iterator<SDL_Rect*> rectIt = _game->getPlatforms()->getIterator();
+	Iterator<SDL_Rect*> rectIt = _client->getGame()->getPlatforms()->getIterator();
 	while (rectIt.hasNext()) {
 		SDL_Rect* curr = rectIt.next();
 		SDL_Rect newRect = *curr;
@@ -266,7 +290,7 @@ void GameOverlay::drawPlatforms(Coord cameraPos) {
 	}
 }
 
-void GameOverlay::drawViewport(Player* p, SDL_Rect viewport) {
+void GameOverlay::drawViewport(PlayerMirror* p, SDL_Rect viewport) {
 	// calculate this player's camera position
 	Coord cameraPos;
 	cameraPos = p->getPos() - Coord{ viewport.w / 2, viewport.h / 2 };
@@ -279,14 +303,14 @@ void GameOverlay::drawViewport(Player* p, SDL_Rect viewport) {
 	drawPlatforms(cameraPos);
 
 	// draw all players
-	Iterator<Player*> playerIt = _game->getPlayers()->getIterator();
+	Iterator<PlayerMirror*> playerIt = _client->getGame()->getPlayers()->getIterator();
 	while (playerIt.hasNext()) {
 		drawPlayer(cameraPos, playerIt.next());
 	}
 
 	// draw the level's bounding box
 	SDL_SetRenderDrawColor(_renderer, 255, 0, 0, 255);
-	SDL_Rect levelBounds = _game->getLevelBounds();
+	SDL_Rect levelBounds = _client->getGame()->getLevelBounds();
 	levelBounds.w = levelBounds.w - levelBounds.x;
 	levelBounds.h = levelBounds.h - levelBounds.y;
 	levelBounds.x -= cameraPos.x;
@@ -307,7 +331,7 @@ void GameOverlay::drawViewport(Player* p, SDL_Rect viewport) {
 	SDL_RenderSetViewport(_renderer, &defaultViewport);
 }
 
-void GameOverlay::drawPlayer(Coord cameraPos, Player* p) {
+void GameOverlay::drawPlayer(Coord cameraPos, PlayerMirror* p) {
 	SDL_Rect playerRect;
 	playerRect.x = p->getPos().x - cameraPos.x;
 	playerRect.y = p->getPos().y - cameraPos.y;

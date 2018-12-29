@@ -2,27 +2,25 @@
 #include "Game.h"
 
 #include "Player.h"
+#include "Message.h"
+#include "Global.h"
+#include "Server.h"
+#include "MiscUtil.h"
 
 Game::Game() {
 	platforms_ = new LinkedList<SDL_Rect*>();
-
-	platforms_->push(new SDL_Rect{ 100, 100, 400, 200 });
-	platforms_->push(new SDL_Rect{ 800, 100, 200, 400 });
-
-	levelBounds_ = { -100, -100, 1000, 1000 };
-
 	players_ = new LinkedList<Player*>();
 
-	players_->push(new Player());
-	players_->push(new Player());
-	players_->push(new Player());
-	players_->push(new Player());
+	levelBounds_ = { -100, -100, 1000, 1000 };
 }
 
 Game::~Game() {
 	while (platforms_->getLength() > 0)
 		delete platforms_->poll();
 	delete platforms_;
+	while (players_->getLength() > 0)
+		delete players_->poll();
+	delete players_;
 }
 
 LinkedList<SDL_Rect*>* Game::getPlatforms() {
@@ -31,6 +29,17 @@ LinkedList<SDL_Rect*>* Game::getPlatforms() {
 
 LinkedList<Player*>* Game::getPlayers() {
 	return players_;
+}
+
+Player* Game::getPlayerByID(int playerID) {
+	Iterator<Player*> it = players_->getIterator();
+	while (it.hasNext()) {
+		Player* curr = it.next();
+		if (curr->getPlayerID() == playerID)
+			return curr;
+	}
+
+	return NULL;
 }
 
 SDL_Rect Game::getLevelBounds() {
@@ -59,4 +68,28 @@ void Game::displacePlayer(Player* p, Coord disp) {
 	if (!intersected) {
 		p->translate(disp);
 	}
+}
+
+void Game::addPlatform(SDL_Rect r) {
+	platforms_->push(new SDL_Rect(r));
+
+	Message m;
+	m.clientID = 0;
+	m.type = MSGTYPE::INFO;
+	m.subType = MSGINFOTYPE::PLATFORM_ADD;
+	m.pos = { r.x, r.y };
+	m.pos2 = { r.w, r.h };
+	_server->sendMessageToAllClients(m);
+}
+
+void Game::addPlayer() {
+	Player* newP = new Player();
+	players_->push(newP);
+
+	Message m;
+	m.clientID = 0;
+	m.type = MSGTYPE::INFO;
+	m.subType = MSGINFOTYPE::PLAYER_ADD;
+	m.num = newP->getPlayerID();
+	_server->sendMessageToAllClients(m);
 }

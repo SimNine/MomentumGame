@@ -1,23 +1,24 @@
 #pragma once
 
 #include "Standard.h"
-
 #include "LinkedList.h"
 
-class Player {
+class PlayerMirror {
 public:
-	Player();
-	virtual ~Player();
+	PlayerMirror(int playerID);
+	virtual ~PlayerMirror();
 
 	Coord getDims();
 	Coord getPos();
 	SDL_Color getColor();
 
-	void translate(Coord disp);
+	void setPos(Coord pos);
 
-protected:
+	int getPlayerID();
+
 private:
 	Coord dims_;
 	Coord pos_;
 	SDL_Color color_;
+	int playerID_;
 };
