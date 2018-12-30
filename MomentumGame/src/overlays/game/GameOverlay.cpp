@@ -197,12 +197,14 @@ void GameOverlay::keyPress(char c) {
 		//_gameOverlay->showPauseMenu();
 	}
 
+	/*
 	if (c == SDLK_SPACE) {
 		Message m;
 		m.type = MSGTYPE::INFO;
 		m.subType = MSGINFOTYPE::PLAYER_ADD;
 		_client->sendToPipe(m);
 	}
+	*/
 
 	// handle chat display
 	//if (c != 0)
@@ -311,8 +313,6 @@ void GameOverlay::drawViewport(PlayerMirror* p, SDL_Rect viewport) {
 	// draw the level's bounding box
 	SDL_SetRenderDrawColor(_renderer, 255, 0, 0, 255);
 	SDL_Rect levelBounds = _client->getGame()->getLevelBounds();
-	levelBounds.w = levelBounds.w - levelBounds.x;
-	levelBounds.h = levelBounds.h - levelBounds.y;
 	levelBounds.x -= cameraPos.x;
 	levelBounds.y -= cameraPos.y;
 	SDL_RenderDrawRect(_renderer, &levelBounds);

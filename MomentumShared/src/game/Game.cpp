@@ -55,6 +55,7 @@ void Game::displacePlayer(Player* p, Coord disp) {
 	newPlayerPos.x += disp.x;
 	newPlayerPos.y += disp.y;
 
+	// check for intersection with platforms
 	SDL_Rect resultRect{ 0, 0, 0, 0 };
 	bool intersected = false;
 	Iterator<SDL_Rect*> platIt = platforms_->getIterator();
@@ -65,6 +66,17 @@ void Game::displacePlayer(Player* p, Coord disp) {
 		}
 	}
 
+	// check for intersection with bounds
+	SDL_Rect inboundsRect;
+	SDL_IntersectRect(&newPlayerPos, &levelBounds_, &inboundsRect);
+	if (inboundsRect.x != newPlayerPos.x ||
+		inboundsRect.y != newPlayerPos.y ||
+		inboundsRect.w != newPlayerPos.w ||
+		inboundsRect.h != newPlayerPos.h) {
+		intersected = true;
+	}
+
+	// if no intersection, do the translation
 	if (!intersected) {
 		p->translate(disp);
 	}

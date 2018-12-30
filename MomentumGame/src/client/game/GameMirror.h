@@ -7,7 +7,7 @@ class PlayerMirror;
 
 class GameMirror {
 public:
-	GameMirror();
+	GameMirror(SDL_Rect bounds);
 	virtual ~GameMirror();
 
 	LinkedList<SDL_Rect*>* getPlatforms();

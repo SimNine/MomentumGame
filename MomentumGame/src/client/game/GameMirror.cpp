@@ -4,11 +4,11 @@
 #include "Global.h"
 #include "PlayerMirror.h"
 
-GameMirror::GameMirror() {
+GameMirror::GameMirror(SDL_Rect bounds) {
 	platformList_ = new LinkedList<SDL_Rect*>();
 	playerList_ = new LinkedList<PlayerMirror*>();
 
-	levelBounds_ = { -100, -100, 1000, 1000 };
+	levelBounds_ = bounds;
 }
 
 GameMirror::~GameMirror() {

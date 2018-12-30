@@ -95,6 +95,7 @@ MainOverlay::MainOverlay()
 	GUIButton* button_game = new GUIButton(mainContainer_, ANCHOR_SOUTHWEST, { 20, -(41 + 20)*ln++ - 20 }, "GAME", 50,
 		[]() {
 		_client->connectToLocalServer();
+		//_client->connectToExternalServer("localhost");
 
 		Message m;
 		m.type = MSGTYPE::STARTGAME;

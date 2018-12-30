@@ -55,7 +55,7 @@ void Client::processMessage(Message* msg) {
 		if (game_ != NULL)
 			delete game_;
 
-		game_ = new GameMirror();
+		game_ = new GameMirror(SDL_Rect{msg->pos.x, msg->pos.y, msg->pos2.x, msg->pos2.y});
 	}
 	break;
 	case MSGTYPE::SOUND:

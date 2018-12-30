@@ -158,9 +158,12 @@ void Server::processMessage(Message* msg) {
 			delete game_;
 
 		game_ = new Game();
+		SDL_Rect gBounds = game_->getLevelBounds();
 
 		Message m;
 		m.type = MSGTYPE::STARTGAME;
+		m.pos = Coord{ gBounds.x, gBounds.y };
+		m.pos2 = Coord{ gBounds.w, gBounds.h };
 		sendMessageToAllClients(m);
 
 		game_->addPlatform(SDL_Rect{ 100, 100, 400, 200 });
