@@ -97,13 +97,13 @@ void _printMessage(Message m) {
 
 		switch ((MSGINFOTYPE)m.subType) {
 		case MSGINFOTYPE::PLATFORM_ADD:
-			log("MSGINFOTYPE::PLATFORM_ADD - TEAM " + to_string(m.num) + "\n");
+			log("MSGINFOTYPE::PLATFORM_ADD - POS: " + to_string(m.pos.x) + "," + to_string(m.pos.y) + "\n");
 			break;
 		case MSGINFOTYPE::PLAYER_ADD:
 			log("MSGINFOTYPE::PLAYER_ADD - PLAYER " + to_string(m.num) + "\n");
 			break;
 		case MSGINFOTYPE::PLATFORM_REM:
-			log("MSGINFOTYPE::PLATFORM_REM - TEAM " + to_string(m.num) + "\n");
+			log("MSGINFOTYPE::PLATFORM_REM - POS: " + to_string(m.pos.x) + "," + to_string(m.pos.y) + "\n");
 			break;
 		case MSGINFOTYPE::PLAYER_REM:
 			log("MSGINFOTYPE::PLAYER_REM - PLAYER " + to_string(m.num) + "\n");

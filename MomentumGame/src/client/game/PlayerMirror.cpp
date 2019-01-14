@@ -20,16 +20,20 @@ Coord PlayerMirror::getDims() {
 	return dims_;
 }
 
+void PlayerMirror::setDims(Coord dims) {
+	dims_ = dims;
+}
+
 Coord PlayerMirror::getPos() {
 	return pos_;
 }
 
-SDL_Color PlayerMirror::getColor() {
-	return color_;
-}
-
 void PlayerMirror::setPos(Coord pos) {
 	pos_ = pos;
+}
+
+SDL_Color PlayerMirror::getColor() {
+	return color_;
 }
 
 int PlayerMirror::getPlayerID() {

@@ -103,5 +103,7 @@ void Game::addPlayer() {
 	m.type = MSGTYPE::INFO;
 	m.subType = MSGINFOTYPE::PLAYER_ADD;
 	m.num = newP->getPlayerID();
+	m.pos = newP->getPos();
+	m.pos2 = newP->getDims();
 	_server->sendMessageToAllClients(m);
 }

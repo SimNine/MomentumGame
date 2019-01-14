@@ -9,10 +9,12 @@ public:
 	virtual ~PlayerMirror();
 
 	Coord getDims();
-	Coord getPos();
-	SDL_Color getColor();
+	void setDims(Coord dims);
 
+	Coord getPos();
 	void setPos(Coord pos);
+
+	SDL_Color getColor();
 
 	int getPlayerID();
 
